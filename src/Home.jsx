@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 const Home = () => {
   return (
     <div>
+      
          <>
       <h1>Welcome to the new poject</h1>
       <h1>React: What it does?</h1>
@@ -26,7 +27,11 @@ const Home = () => {
       </div>
 
       <div>
+        <a href="http://localhost:5173/dvfiofogbosbofbf" >Not Found</a>
+        <br/>
         <Link to="about">About</Link>
+        <br/>
+
         <Link to="login">Login</Link>
       </div>
     </>

@@ -1,0 +1,40 @@
+useRef -> is a react hook returns a mutable ref object 
+
+.current -> current property -> this is initialised to pass argument. 
+
+the returned object will persists for the full lifetime of the componenet. 
+
+older way of selecting elements -> getElementById, getElementByClassName, ....
+
+
+Characteristics 
+
+1. Mutable - unlike state, we can modify the .current directly without causing re-renders
+2. Persistent -> ref object persists across re renders
+3. No re-renders: changing the .current value doesnt trigger component re-renders
+4. Synchronous : .current updates work immediately
+
+function myComponent(){
+    const myRef = useRef(initialValue);
+    return <div>Component</div>
+}
+
+
+When to use useRef?
+
+1. DOM Element references store 
+
+for accessing DOM elements directly
+
+
+
+a. create a useRef object with initial .current value null
+b. give the target element the ref attribute and write the reference object in it
+c. now we can access the element 
+
+
+
+2. used for storing mutable values 
+
+we can store values that need to persist across renders without causing re-renders
+

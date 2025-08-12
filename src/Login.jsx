@@ -1,8 +1,14 @@
 import React from 'react'
+import Mycomp from './Mycomp'
+import Timer from './Timer'
+import Theme from './Theme'
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <div>
+
+      <Theme />
+    </div>
   )
 }
 
