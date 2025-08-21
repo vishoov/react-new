@@ -10,6 +10,9 @@ import Login from './Login'
 import About from './About'
 import Mycomp from './Mycomp'
 
+import User from '../user.jsx'
+import Counter from './Counter.jsx'
+
 function App() {
 
   return (
@@ -17,12 +20,18 @@ function App() {
 <nav>
   Hello
 </nav>
+
+{/* <User /> */}
+
+<Counter />
+{/* 
     <BrowserRouter>
       <div className="App">
       <AppRoutes />
        
       </div>
-    </BrowserRouter>
+    </BrowserRouter> */}
+
 
 
     {/* <Mycomp /> */}

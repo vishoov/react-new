@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { useRef } from "react"
 import "./theme.css"
+import myContext from './Context/Context.jsx'
 const Theme = () => {
     //useRef to directly access and manipulate DOM element for theme switchting
     const themeRef = useRef(null);
     const buttonRef = useRef(null);
-
+    const { count, setCount } = React.useContext(myContext);
 
     const toggleTheme = ()=>{
         const currentTheme = themeRef.current.getAttribute('data-theme');
@@ -27,6 +28,7 @@ const Theme = () => {
 
   return (
     <div ref={themeRef} data-theme="light" className="theme-container">
+      <h1>{count}</h1>
         <div className="content">
         <h1>React Theme Switcher</h1>
         <p>This is a simple theme switcher using useRef hook.</p>

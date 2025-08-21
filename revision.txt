@@ -1,0 +1,114 @@
+React Revision
+
+State management 
+
+variable -> current -> state 
+
+useState -> managing state in functional components 
+
+
+functional programming -
+
+- reusability
+- dynamic data 
+- modular programming 
+- security 
+
+
+olx signup -> name, phone, email, role 
+
+amazon.in -> signup -> users
+admin -> amazon.in/admin -> signup 
+
+useState -> this is used to manage state of a variable 
+
+initial state, current state and updater function 
+
+const [state, setState] = useState("initial");
+
+initial -> "initial"
+state -> current value
+setState -> updater function -> updates the state -> it calls for re-rendering of the component 
+
+why are we talking about re-painting the component ? why not the whole page?
+
+re-rendering the whole page is computationaly expenisve -> so to OPTIMIZE the DOM performance we only re-paint the component in which a state is changing 
+
+
+//state of a user info-> email, password, name 
+user 
+
+const [user, setUser] = useState({
+    name:"",
+    email:"",
+    password:""
+})
+
+<input -> name, email, password 
+
+<input -> 
+
+
+submit -> setUser({
+    name:inputname,
+    email:inputemail,
+    password:inputpassword
+})
+
+
+Lazy Initialisation -> performance optimization technique where initial state is computed only when the component FIRST renders rather than on every render 
+
+//todo list -> local storage -> render or populate 
+
+-> initial state has expensive calculation
+-> localStorage or sessionStorage
+-> API calls
+
+LAzy -> one thing at a time
+first loading of component -> data fetching
+
+
+const [exprensiveValue, setExpensiveValue] = useState(
+    ()=> computeExpensive()
+);
+
+
+const [todo, setTodo] = useState(()=>{
+    const todos = localStorage.getItem('todos);
+    return todos? JSON.parse(todos): [];
+})
+
+Performance-> prevents unecessary computation on re-renders
+Memory Efficiency -> temporary objects prevent 
+Better user experience 
+
+useState -> asynchronous and batched 
+
+react-router-DOM
+
+BrowserRouter -> wrapper for defining the routes -> this will define a subtree 
+Routes -> this will define the routes with their elements 
+Route-> single route mapped with single coponent 
+
+
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/products">Products</Link>
+      </nav>
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}

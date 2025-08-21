@@ -1,12 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
- 
+
+import { useContext, useEffect } from 'react'
+import myContext from './Context/Context.jsx'
 
 const Home = () => {
+  const { count, setCount } = useContext(myContext);
+useEffect(()=>{
+  console.log("Count value:", count);
+})
   return (
+
     <div>
-      
+        <button onClick={() => setCount(count + 1)}>Increment Count</button>
+
          <>
+
       <h1>Welcome to the new poject</h1>
       <h1>React: What it does?</h1>
       <p>Single Page Applications</p>
@@ -36,6 +45,7 @@ const Home = () => {
       </div>
     </>
     </div>
+
   )
 }
 

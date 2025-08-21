@@ -37,4 +37,3 @@ c. now we can access the element
 2. used for storing mutable values 
 
 we can store values that need to persist across renders without causing re-renders
-
